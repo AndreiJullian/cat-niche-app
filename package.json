@@ -1,0 +1,13 @@
+{
+  "name": "cat-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cat Explorer - a full-stack cat breed explorer using The Cat API and Netlify Functions.",
+  "scripts": {
+    "dev": "netlify dev",
+    "start": "netlify dev"
+  },
+  "devDependencies": {
+    "netlify-cli": "^23.7.0"
+  }
+}

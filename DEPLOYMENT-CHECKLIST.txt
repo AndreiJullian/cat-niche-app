@@ -1,0 +1,30 @@
+CAT EXPLORER DEPLOYMENT CHECKLIST
+
+1. Get a free The Cat API key:
+   https://thecatapi.com/
+
+2. Test locally:
+   npm install
+   copy .env.example .env
+   Put your real key in .env
+   npm run dev
+
+3. Create a public GitHub repository and push the project.
+
+4. Import the GitHub repository into Netlify.
+
+5. Add this Netlify environment variable:
+   CAT_API_KEY = YOUR_REAL_KEY
+
+6. Redeploy.
+
+7. Test the live URL:
+   - breed dropdown
+   - search
+   - random cat
+   - details
+   - favorites
+
+8. Submit:
+   - GitHub repository URL
+   - Netlify live URL

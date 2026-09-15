@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cat Explorer - discover cat breeds and random cat photos using The Cat API.">
+  <title>Cat Explorer | Discover Your Purr-fect Cat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-paw paw-one">🐾</div>
+  <div class="background-paw paw-two">🐾</div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Cat Explorer home">
+      <span class="brand-icon">🐱</span>
+      <span>CAT EXPLORER</span>
+    </a>
+    <span class="api-badge">Powered by The Cat API</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MEET YOUR NEXT FAVORITE CAT</p>
+        <h1>Explore the<br><span>purr-fect</span> breed.</h1>
+        <p class="hero-text">
+          Search cat breeds, discover their personalities, and find a random cat photo to brighten your day.
+        </p>
+        <div class="quick-stats">
+          <div><strong id="breedCount">—</strong><span>breeds</span></div>
+          <div><strong>10K</strong><span>free requests/mo</span></div>
+          <div><strong>∞</strong><span>cat moments</span></div>
+        </div>
+      </div>
+
+      <div class="hero-cat-card">
+        <div class="cat-card-glow"></div>
+        <img id="heroCatImage" src="https://cdn2.thecatapi.com/images/MTY3ODIyMQ.jpg" alt="Featured cat">
+        <div class="hero-card-caption">
+          <span>FEATURED CAT</span>
+          <strong id="heroCatName">Loading...</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="explorer-section" id="explorer">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DISCOVER</p>
+          <h2>Find a breed</h2>
+        </div>
+        <button id="randomBtn" class="secondary-btn" type="button">
+          <span>↻</span> Random cat
+        </button>
+      </div>
+
+      <div class="search-panel">
+        <label for="breedSearch">Search by breed name</label>
+        <div class="search-row">
+          <div class="search-input-wrap">
+            <span>⌕</span>
+            <input id="breedSearch" type="search" placeholder="Try Siamese, Bengal, Maine Coon..." autocomplete="off">
+            <button id="clearSearch" class="clear-btn" type="button" aria-label="Clear search">×</button>
+          </div>
+          <select id="breedSelect" aria-label="Choose a breed">
+            <option value="">All breeds</option>
+          </select>
+        </div>
+        <p class="search-help">Type at least 2 letters or choose a breed from the list.</p>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <div id="results" class="results-grid"></div>
+    </section>
+
+    <section class="favorites-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR PICKS</p>
+          <h2>Favorite cats</h2>
+        </div>
+        <button id="clearFavorites" class="text-btn" type="button">Clear all</button>
+      </div>
+      <div id="favorites" class="favorites-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built for the Free API Niche Challenge · <a href="https://thecatapi.com/" target="_blank" rel="noopener">The Cat API</a></p>
+    <p>Cat photos and breed data are provided by The Cat API.</p>
+  </footer>
+
+  <template id="catCardTemplate">
+    <article class="cat-card">
+      <div class="cat-image-wrap">
+        <img class="cat-image" alt="Cat">
+        <button class="favorite-btn" type="button" aria-label="Add to favorites">♡</button>
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-title-row">
+          <h3 class="cat-name">Unknown cat</h3>
+          <span class="origin-badge"></span>
+        </div>
+        <p class="cat-temperament"></p>
+        <div class="traits"></div>
+        <button class="details-btn" type="button">View details <span>→</span></button>
+      </div>
+    </article>
+  </template>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close" type="button" aria-label="Close details">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
